@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EurekaMS — Mind Services</title>
+  <meta name="description" content="Capa de inteligencia para negocios mexicanos. Convierte tus datos en decisiones, prospecta con voz AI y expande con evidencia territorial." />
+  <meta property="og:title" content="EurekaMS — Mind Services" />
+  <meta property="og:description" content="Tu analista de datos 24/7. Tu vendedor que nunca duerme. Tu tablero de territorio antes de mover la pieza." />
+  <meta property="og:type" content="website" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: { DEFAULT: '#F59E0B', dark: '#D97706', light: '#FCD34D' },
+            dark: { DEFAULT: '#0A0A0F', card: '#111118', border: '#1E1E2E' }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    body { background-color: #0A0A0F; color: #ffffff; }
+    .amber { color: #F59E0B; }
+    .bg-amber { background-color: #F59E0B; }
+    .border-amber { border-color: #F59E0B; }
+    .card { background-color: #111118; border: 1px solid #1E1E2E; }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pcb-line {
+      position: relative;
+      overflow: hidden;
+    }
+    .pcb-line::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #F59E0B40, transparent);
+    }
+    .hero-glow {
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, #F59E0B15, transparent);
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid #F59E0B40;
+      color: #F59E0B;
+      background: #F59E0B10;
+    }
+    .question-item {
+      border-left: 2px solid #F59E0B40;
+      padding-left: 16px;
+      margin-bottom: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #9CA3AF;
+      transition: all 0.2s;
+    }
+    .question-item:hover {
+      border-left-color: #F59E0B;
+      color: #E5E7EB;
+    }
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: #9CA3AF;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .nav-link:hover { color: #ffffff; }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: #F59E0B;
+      color: #0A0A0F;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-btn:hover { background: #D97706; transform: translateY(-1px); }
+    .cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: 1px solid #374151;
+      color: #D1D5DB;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .cta-ghost:hover { border-color: #F59E0B; color: #ffffff; }
+    .pilar-card {
+      background: #111118;
+      border: 1px solid #1E1E2E;
+      border-radius: 16px;
+      padding: 36px;
+      transition: border-color 0.3s;
+    }
+    .pilar-card:hover { border-color: #F59E0B40; }
+    .pilar-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 24px;
+      background: #F59E0B15;
+      border: 1px solid #F59E0B30;
+    }
+    .stat-card {
+      background: #111118;
+      border: 1px solid #1E1E2E;
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+    }
+    .table-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 140px;
+      gap: 16px;
+      padding: 14px 20px;
+      border-bottom: 1px solid #1E1E2E;
+      align-items: center;
+    }
+    .table-row:last-child { border-bottom: none; }
+    .table-header { background: #1E1E2E; border-radius: 8px 8px 0 0; }
+    footer { border-top: 1px solid #1E1E2E; }
+    @media (max-width: 768px) {
+      .table-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav style="border-bottom: 1px solid #1E1E2E; position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); background: rgba(10,10,15,0.90);">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <span style="font-size: 18px; font-weight: 800; letter-spacing: -0.02em;">Eureka<span class="amber">MS</span></span>
+      <span class="pill" style="font-size: 10px;">Mind Services</span>
+    </div>
+    <div style="display: flex; gap: 32px; align-items: center;">
+      <a href="#pilares" class="nav-link">Producto</a>
+      <a href="#stack" class="nav-link">Stack</a>
+      <a href="#para-quien" class="nav-link">Para quién</a>
+      <a href="#contacto" class="cta-btn" style="padding: 8px 20px; font-size: 14px;">Agendar demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-glow" style="padding: 120px 24px 100px;">
+  <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+    <div style="margin-bottom: 24px;">
+      <span class="pill">Del caos al orden · La oportunidad de Ver</span>
+    </div>
+    <h1 style="font-size: clamp(40px, 7vw, 72px); font-weight: 900; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 28px;">
+      El negocio mexicano<br/>
+      <span class="gradient-text">opera ciego.</span><br/>
+      Nosotros cambiamos eso.
+    </h1>
+    <p style="font-size: clamp(16px, 2.5vw, 20px); color: #9CA3AF; max-width: 640px; margin: 0 auto 48px; line-height: 1.7;">
+      EurekaMS es la capa de inteligencia que vive dentro de tu negocio — ve lo que tú no ves y opera las oportunidades antes de que se pierdan.
+    </p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#contacto" class="cta-btn">
+        Agendar demo
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#pilares" class="cta-ghost">Ver cómo funciona</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding: 0 24px 80px;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+      <div class="stat-card">
+        <div style="font-size: 42px; font-weight: 900; color: #F59E0B; letter-spacing: -0.03em;">6.1M</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;">establecimientos económicos<br/>en México disponibles</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size: 42px; font-weight: 900; color: #F59E0B; letter-spacing: -0.03em;">&lt;60s</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;">para responder preguntas<br/>de negocio complejas</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size: 42px; font-weight: 900; color: #F59E0B; letter-spacing: -0.03em;">&lt;1.1s</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;">latencia del agente<br/>de voz AI</div>
+      </div>
+      <div class="stat-card">
+        <div style="font-size: 42px; font-weight: 900; color: #F59E0B; letter-spacing: -0.03em;">$0.03</div>
+        <div style="font-size: 14px; color: #6B7280; margin-top: 6px;">por minuto de llamada<br/>de voz AI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EL GAP -->
+<section style="padding: 0 24px 100px;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; border-radius: 16px; overflow: hidden; border: 1px solid #1E1E2E;">
+      <div style="padding: 40px 32px; background: #111118;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; margin-bottom: 16px;">El mundo grande</div>
+        <div style="font-weight: 700; font-size: 20px; margin-bottom: 12px;">SAP · Salesforce</div>
+        <div style="color: #6B7280; font-size: 14px; line-height: 1.7;">Fuera de alcance. En costo, en tiempo, en capacidad interna para operarlo.</div>
+        <div style="margin-top: 20px; color: #EF4444; font-size: 13px; font-weight: 600;">✗ No está disponible para ti</div>
+      </div>
+      <div style="padding: 40px 32px; background: #F59E0B08; border-left: 1px solid #1E1E2E; border-right: 1px solid #1E1E2E; border-top: 2px solid #F59E0B;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F59E0B; margin-bottom: 16px;">EurekaMS</div>
+        <div style="font-weight: 700; font-size: 20px; margin-bottom: 12px;">Mind Services</div>
+        <div style="color: #D1D5DB; font-size: 14px; line-height: 1.7;">Inteligencia de empresa grande, operada para negocios con 10–500 tiendas. Sin el costo ni la complejidad.</div>
+        <div style="margin-top: 20px; color: #F59E0B; font-size: 13px; font-weight: 600;">✓ Diseñado para ti</div>
+      </div>
+      <div style="padding: 40px 32px; background: #111118;">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #6B7280; margin-bottom: 16px;">El mundo pequeño</div>
+        <div style="font-weight: 700; font-size: 20px; margin-bottom: 12px;">Excel · WhatsApp</div>
+        <div style="color: #6B7280; font-size: 14px; line-height: 1.7;">Funciona hasta que deja de funcionar. No escala. No alerta. No ve el territorio.</div>
+        <div style="margin-top: 20px; color: #EF4444; font-size: 13px; font-weight: 600;">✗ Te limita a donde estás</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section id="pilares" style="padding: 0 24px 100px;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 64px;">
+      <span class="pill" style="margin-bottom: 16px; display: inline-block;">Tres pilares · Una capa de inteligencia</span>
+      <h2 style="font-size: clamp(28px, 5vw, 48px); font-weight: 800; letter-spacing: -0.02em;">Cómo lo hacemos</h2>
+    </div>
+
+    <!-- PILAR 1 -->
+    <div class="pilar-card" style="margin-bottom: 24px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <div>
+          <div class="pilar-icon">📊</div>
+          <div class="pill" style="margin-bottom: 16px;">Pilar 1</div>
+          <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em;">Intelligence Ops</h3>
+          <p style="font-size: 18px; color: #F59E0B; font-weight: 600; margin-bottom: 20px;">"Tu analista de datos disponible 24/7"</p>
+          <p style="color: #9CA3AF; line-height: 1.75; font-size: 15px;">Conecta un agente AI directamente a tu warehouse. El agente lee tu schema, entiende tu negocio, escribe el SQL, lo ejecuta, y te entrega la respuesta con el chart y la narrativa — en 60 segundos, por WhatsApp o interfaz web.</p>
+          <p style="color: #9CA3AF; line-height: 1.75; font-size: 15px; margin-top: 12px;">Cada respuesta viene con el SQL visible y auditable. No es una caja negra — es un analista que te muestra su trabajo.</p>
+        </div>
+        <div>
+          <div style="font-size: 13px; font-weight: 600; color: #6B7280; margin-bottom: 16px; letter-spacing: 0.05em; text-transform: uppercase;">Preguntas que responde hoy</div>
+          <div class="question-item">"¿Cuál es mi tienda con mayor riesgo de quiebre de stock este fin de semana?"</div>
+          <div class="question-item">"¿Qué SKUs no rotan en el norte del país desde hace 30 días?"</div>
+          <div class="question-item">"¿Por qué la tienda del Pedregal vende 40% más que su par en Satélite?"</div>
+          <div class="question-item">"¿Qué me está pidiendo el territorio que yo no estoy comprando?"</div>
+          <div class="question-item">"Dame las 10 SKUs con mayor delta entre sell-through y compra este trimestre."</div>
+          <div style="margin-top: 20px; padding: 16px; background: #F59E0B08; border-radius: 10px; border: 1px solid #F59E0B20;">
+            <div style="font-size: 13px; color: #F59E0B; font-weight: 600; margin-bottom: 6px;">Alertas proactivas</div>
+            <div style="font-size: 13px; color: #9CA3AF;">No espera que preguntes. Si detecta una anomalía, te avisa antes de que el daño esté hecho.</div>
+          </div>
+          <div style="margin-top: 16px; font-size: 12px; color: #6B7280;">
+            <span style="font-weight: 600;">Stack:</span> Wilab (agente MCP-nativo) + DENUE Analyzer + tu warehouse
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PILAR 2 -->
+    <div class="pilar-card" style="margin-bottom: 24px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <div>
+          <div class="pilar-icon">🎙️</div>
+          <div class="pill" style="margin-bottom: 16px;">Pilar 2</div>
+          <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em;">Voice Solutions</h3>
+          <p style="font-size: 18px; color: #F59E0B; font-weight: 600; margin-bottom: 20px;">"El vendedor que nunca duerme"</p>
+          <p style="color: #9CA3AF; line-height: 1.75; font-size: 15px;">Automatiza las conversaciones de volumen sin bajar la calidad. Tu equipo concentra energía en los cierres que necesitan atención personal — el AI maneja el volumen.</p>
+          <div style="margin-top: 24px; padding: 16px; background: #F59E0B08; border-radius: 10px; border: 1px solid #F59E0B20;">
+            <div style="font-size: 13px; color: #F59E0B; font-weight: 600; margin-bottom: 8px;">Motor: PipeSong</div>
+            <div style="font-size: 13px; color: #9CA3AF; line-height: 1.6;">Self-hosted · Latencia &lt;1.1s · &lt;$0.03/min · Español nativo. Infraestructura propia — el costo no escala con el volumen.</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="padding: 20px; background: #0A0A0F; border-radius: 12px; border: 1px solid #1E1E2E;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">📥 Inbound</div>
+            <div style="font-size: 14px; color: #9CA3AF;">Atiende llamadas 24/7 — disponibilidad, precios, agendamiento, soporte básico. Sin hold, sin horarios.</div>
+          </div>
+          <div style="padding: 20px; background: #0A0A0F; border-radius: 12px; border: 1px solid #1E1E2E;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">📤 Outbound</div>
+            <div style="font-size: 14px; color: #9CA3AF;">Campañas de reactivación, recordatorios de cita, seguimiento post-compra a escala.</div>
+          </div>
+          <div style="padding: 20px; background: #0A0A0F; border-radius: 12px; border: 1px solid #1E1E2E;">
+            <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px;">🎯 Prospección</div>
+            <div style="font-size: 14px; color: #9CA3AF;">Llamadas en frío a volumen que ningún equipo humano puede igualar, con calidad consistente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PILAR 3 -->
+    <div class="pilar-card">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+        <div>
+          <div class="pilar-icon">🗺️</div>
+          <div class="pill" style="margin-bottom: 16px;">Pilar 3</div>
+          <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.02em;">Territory Ops</h3>
+          <p style="font-size: 18px; color: #F59E0B; font-weight: 600; margin-bottom: 20px;">"Ve el tablero antes de mover la pieza"</p>
+          <p style="color: #9CA3AF; line-height: 1.75; font-size: 15px;">Conecta 6.1 millones de establecimientos económicos (DENUE/INEGI) a tu pregunta específica. Mientras el estudio de mercado tradicional tarda semanas, Territory Ops responde en minutos.</p>
+          <p style="color: #9CA3AF; line-height: 1.75; font-size: 15px; margin-top: 12px;">No elimina el juicio del director. Lo amplifica con evidencia.</p>
+        </div>
+        <div>
+          <div style="font-size: 13px; font-weight: 600; color: #6B7280; margin-bottom: 16px; letter-spacing: 0.05em; text-transform: uppercase;">Decisiones que soporta</div>
+          <div class="question-item">"¿Dónde debería abrir mi próxima tienda en CDMX?"</div>
+          <div class="question-item">"¿Qué tan saturado está el mercado de calzado deportivo en Monterrey norte?"</div>
+          <div class="question-item">"¿Cuál es el perfil socioeconómico del radio de 2km alrededor de este local?"</div>
+          <div class="question-item">"¿Qué competidores operan en esa zona y cuánto tiempo llevan ahí?"</div>
+          <div class="question-item">"¿Cuántas tiendas similares cerraron en ese corredor en los últimos 2 años?"</div>
+          <div style="margin-top: 20px; font-size: 12px; color: #6B7280;">
+            <span style="font-weight: 600;">Fuentes:</span> DENUE 6.1M establecimientos · Mexico Uncharted AGEB · Datos socioeconómicos por colonia
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack" style="padding: 0 24px 100px; background: #111118;">
+  <div style="max-width: 1100px; margin: 0 auto; padding-top: 80px;">
+    <div style="text-align: center; margin-bottom: 64px;">
+      <span class="pill" style="margin-bottom: 16px; display: inline-block;">Tecnología</span>
+      <h2 style="font-size: clamp(28px, 5vw, 48px); font-weight: 800; letter-spacing: -0.02em;">El stack debajo</h2>
+      <p style="color: #9CA3AF; margin-top: 16px; font-size: 16px; max-width: 500px; margin-left: auto; margin-right: auto;">No inventamos la tecnología. La ensamblamos, la especializamos, y la operamos.</p>
+    </div>
+    <div style="border: 1px solid #1E1E2E; border-radius: 16px; overflow: hidden;">
+      <div class="table-row table-header" style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7280;">
+        <div>Componente</div>
+        <div>Rol</div>
+        <div>Pilar</div>
+      </div>
+      <div class="table-row">
+        <div style="font-weight: 700; color: #F59E0B;">Wilab</div>
+        <div style="font-size: 14px; color: #9CA3AF;">Agente analítico MCP-nativo, whitelabel. SQL auditable. Los datos nunca salen de tu infraestructura.</div>
+        <div><span class="pill" style="font-size: 10px;">Intelligence</span></div>
+      </div>
+      <div class="table-row">
+        <div style="font-weight: 700; color: #F59E0B;">PipeSong</div>
+        <div style="font-size: 14px; color: #9CA3AF;">Motor de voz AI self-hosted: Pipecat + Deepgram + vLLM + Kokoro. Latencia &lt;1.1s. Español nativo.</div>
+        <div><span class="pill" style="font-size: 10px;">Voice</span></div>
+      </div>
+      <div class="table-row">
+        <div style="font-weight: 700; color: #F59E0B;">DENUE Analyzer</div>
+        <div style="font-size: 14px; color: #9CA3AF;">6.1M establecimientos económicos INEGI. Consultable por zona, categoría, densidad competitiva, antigüedad.</div>
+        <div><span class="pill" style="font-size: 10px;">Intel + Territory</span></div>
+      </div>
+      <div class="table-row">
+        <div style="font-weight: 700; color: #F59E0B;">Mexico Uncharted</div>
+        <div style="font-size: 14px; color: #9CA3AF;">Datos territoriales: demográficos, socioeconómicos, geoespaciales por AGEB. La señal más completa del territorio.</div>
+        <div><span class="pill" style="font-size: 10px;">Territory</span></div>
+      </div>
+      <div class="table-row">
+        <div style="font-weight: 700; color: #F59E0B;">Jarvis</div>
+        <div style="font-size: 14px; color: #9CA3AF;">Sistema de inteligencia autónoma: identifica prospectos, enriquece perfiles, detecta oportunidades, opera leads.</div>
+        <div><span class="pill" style="font-size: 10px;">Prospección</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="para-quien" style="padding: 80px 24px 100px;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;">
+      <div>
+        <span class="pill" style="margin-bottom: 20px; display: inline-block;">Perfil ideal</span>
+        <h2 style="font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 32px;">Para quién es esto</h2>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="color: #F59E0B; font-size: 18px; flex-shrink: 0; margin-top: 2px;">✓</div>
+            <div style="color: #D1D5DB; font-size: 15px;">Retail, servicios o food service con <strong style="color: #ffffff;">10 a 500 tiendas en México</strong></div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="color: #F59E0B; font-size: 18px; flex-shrink: 0; margin-top: 2px;">✓</div>
+            <div style="color: #D1D5DB; font-size: 15px;">Tienen datos (ERP, CRM, SQL, Snowflake) pero <strong style="color: #ffffff;">no los están convirtiendo en decisiones</strong></div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="color: #F59E0B; font-size: 18px; flex-shrink: 0; margin-top: 2px;">✓</div>
+            <div style="color: #D1D5DB; font-size: 15px;">Tienen volumen de contacto que <strong style="color: #ffffff;">su equipo no puede procesar</strong> completamente</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="color: #F59E0B; font-size: 18px; flex-shrink: 0; margin-top: 2px;">✓</div>
+            <div style="color: #D1D5DB; font-size: 15px;">Están creciendo o quieren crecer y <strong style="color: #ffffff;">necesitan evidencia</strong> para tomar esas decisiones</div>
+          </div>
+        </div>
+      </div>
+      <div style="background: #111118; border-radius: 16px; padding: 36px; border: 1px solid #1E1E2E;">
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 24px;">Lo que NO somos</h3>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="color: #6B7280; font-size: 18px; flex-shrink: 0; margin-top: 2px;">✗</div>
+            <div style="color: #6B7280; font-size: 15px;">Una consultora que entrega un reporte y desaparece</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="color: #6B7280; font-size: 18px; flex-shrink: 0; margin-top: 2px;">✗</div>
+            <div style="color: #6B7280; font-size: 15px;">Un software que el cliente implementa solo</div>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <div style="color: #6B7280; font-size: 18px; flex-shrink: 0; margin-top: 2px;">✗</div>
+            <div style="color: #6B7280; font-size: 15px;">Un call center externo que reemplaza tu equipo</div>
+          </div>
+        </div>
+        <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid #1E1E2E;">
+          <p style="font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.6;">Somos la capa de inteligencia que <span style="color: #F59E0B;">vive dentro de tu negocio.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM LINE / MANIFESTO -->
+<section style="padding: 0 24px 100px;">
+  <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+    <div style="border: 1px solid #F59E0B30; border-radius: 20px; padding: 64px 48px; background: #F59E0B05;">
+      <p style="font-size: clamp(18px, 3vw, 24px); color: #D1D5DB; line-height: 1.75; margin-bottom: 32px;">
+        Los negocios que ganen la próxima década no serán los que tengan más capital o más gente. Serán los que <strong style="color: #ffffff;">vean más rápido.</strong>
+      </p>
+      <p style="font-size: 15px; color: #6B7280; line-height: 1.75; margin-bottom: 32px;">
+        No reemplazamos al director comercial ni al equipo de operaciones. Los movemos upstream: de ejecutar a ciegas a decidir con evidencia. De perseguir lo que ya se perdió a operar lo que aún está disponible.
+      </p>
+      <p style="font-size: 18px; font-weight: 700; color: #F59E0B;">Eso es lo que construimos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACTO -->
+<section id="contacto" style="padding: 0 24px 120px;">
+  <div style="max-width: 640px; margin: 0 auto; text-align: center;">
+    <span class="pill" style="margin-bottom: 20px; display: inline-block;">Próximo paso</span>
+    <h2 style="font-size: clamp(28px, 5vw, 48px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px;">Agenda una demo de 30 minutos</h2>
+    <p style="color: #9CA3AF; font-size: 16px; margin-bottom: 40px; line-height: 1.7;">
+      Te mostramos Intelligence Ops respondiendo una pregunta real de tu negocio — en vivo, con tus datos o con datos de tu industria.
+    </p>
+    <div style="background: #111118; border: 1px solid #1E1E2E; border-radius: 16px; padding: 40px;">
+      <form style="display: flex; flex-direction: column; gap: 16px;" onsubmit="handleForm(event)">
+        <input type="text" placeholder="Nombre" required style="padding: 14px 18px; background: #0A0A0F; border: 1px solid #374151; border-radius: 8px; color: #ffffff; font-size: 15px; outline: none;" onfocus="this.style.borderColor='#F59E0B'" onblur="this.style.borderColor='#374151'" />
+        <input type="email" placeholder="Email corporativo" required style="padding: 14px 18px; background: #0A0A0F; border: 1px solid #374151; border-radius: 8px; color: #ffffff; font-size: 15px; outline: none;" onfocus="this.style.borderColor='#F59E0B'" onblur="this.style.borderColor='#374151'" />
+        <input type="text" placeholder="Empresa y número de tiendas" style="padding: 14px 18px; background: #0A0A0F; border: 1px solid #374151; border-radius: 8px; color: #ffffff; font-size: 15px; outline: none;" onfocus="this.style.borderColor='#F59E0B'" onblur="this.style.borderColor='#374151'" />
+        <button type="submit" class="cta-btn" style="justify-content: center; margin-top: 8px; border: none; cursor: pointer;">
+          Solicitar demo
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+      <p style="font-size: 12px; color: #6B7280; margin-top: 20px;">Sin compromiso · Respuesta en menos de 24h</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding: 40px 24px; border-top: 1px solid #1E1E2E;">
+  <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <div>
+      <div style="font-size: 16px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px;">Eureka<span class="amber">MS</span></div>
+      <div style="font-size: 12px; color: #6B7280;">Mind Services · Una empresa EurekaMD-net</div>
+    </div>
+    <div style="font-size: 13px; color: #4B5563;">© 2026 EurekaMS · Todos los derechos reservados</div>
+  </div>
+</footer>
+
+<script>
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✓ Solicitud recibida — te contactamos en 24h';
+    btn.style.background = '#059669';
+    btn.disabled = true;
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+
+</body>
+</html>
