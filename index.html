@@ -95,6 +95,11 @@
       pointer-events: none;
     }
     .hero-inner { max-width: 900px; text-align: center; position: relative; z-index: 1; }
+    .hero-logo {
+      width: clamp(120px, 20vw, 200px); height: auto;
+      margin-bottom: 2rem; display: block; margin-left: auto; margin-right: auto;
+      filter: drop-shadow(0 0 24px rgba(245,158,11,0.25));
+    }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 0.5rem;
       padding: 0.35rem 1rem; border-radius: 999px;
@@ -328,6 +333,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner fade-in">
+    <img src="assets/logo-transparent.png" alt="EurekaMS" class="hero-logo">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
       Inteligencia Territorial y Comercial
