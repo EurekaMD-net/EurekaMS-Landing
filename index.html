@@ -214,15 +214,6 @@
     }
 
     /* Stack */
-    .stack-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 3rem; }
-    .stack-row { background: var(--card); padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 1fr 2fr auto; align-items: center; gap: 1rem; transition: background 0.2s; }
-    .stack-row:hover { background: var(--card2); }
-    .stack-name { font-weight: 700; font-size: 0.95rem; }
-    .stack-role { font-size: 0.8rem; color: var(--text-muted); }
-    .stack-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-family: var(--mono); font-weight: 500; white-space: nowrap; }
-    .badge-propio { background: rgba(245,158,11,0.1); color: var(--amber); border: 1px solid rgba(245,158,11,0.22); }
-    .badge-partner { background: rgba(99,102,241,0.1); color: #A5B4FC; border: 1px solid rgba(99,102,241,0.22); }
-    .badge-infra { background: rgba(34,197,94,0.08); color: #86EFAC; border: 1px solid rgba(34,197,94,0.18); }
 
     /* Para quién */
     .quien-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
@@ -289,7 +280,6 @@
       .bento-cell.hero-cell { grid-column: span 2; grid-row: span 1; }
       .bento-cell.span2 { grid-column: span 2; }
       .pilar-card-row { grid-template-columns: 1fr; }
-      .stack-grid { grid-template-columns: 1fr; }
       .quien-grid { grid-template-columns: 1fr 1fr; }
       .form-grid { grid-template-columns: 1fr; }
       .form-full { grid-column: 1; }
@@ -314,7 +304,6 @@
     <a href="#" class="nav-logo">Eureka<span>MS</span></a>
     <ul class="nav-links">
       <li><a href="#pilares">Producto</a></li>
-      <li><a href="#stack">Stack</a></li>
       <li><a href="#quien">Para quien</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -327,7 +316,6 @@
 
 <div class="mobile-menu" id="mobile-menu">
   <a href="#pilares" onclick="closeMobile()">Producto</a>
-  <a href="#stack" onclick="closeMobile()">Stack</a>
   <a href="#quien" onclick="closeMobile()">Para quien</a>
   <a href="#contacto" onclick="closeMobile()">Agendar demo</a>
 </div>
@@ -1174,48 +1162,6 @@ tRun(0);
 })();
 </script>
 
-  </div>
-</section>
-
-<!-- STACK -->
-<section id="stack" style="background: rgba(255,255,255,0.015);">
-  <div class="container">
-    <span class="section-label">Stack tecnologico</span>
-    <h2>Construido sobre<br>infraestructura de produccion</h2>
-    <p class="section-sub">Cada componente fue seleccionado por latencia, costo por operacion y capacidad de operar sin equipo tecnico interno.</p>
-
-    <div class="stack-grid fade-in">
-      <div class="stack-row">
-        <span class="stack-name">Wilab</span>
-        <span class="stack-role">Analisis de inventario y retail analytics</span>
-        <span class="stack-badge badge-partner">Partner</span>
-      </div>
-      <div class="stack-row">
-        <span class="stack-name">PipeSong</span>
-        <span class="stack-role">Engine de voz AI (latencia &lt;1.1s)</span>
-        <span class="stack-badge badge-propio">Propio</span>
-      </div>
-      <div class="stack-row">
-        <span class="stack-name">DENUE Analyzer</span>
-        <span class="stack-role">6.1M establecimientos — inteligencia territorial</span>
-        <span class="stack-badge badge-propio">Propio</span>
-      </div>
-      <div class="stack-row">
-        <span class="stack-name">Mexico Uncharted</span>
-        <span class="stack-role">Cobertura geografica y expansion</span>
-        <span class="stack-badge badge-propio">Propio</span>
-      </div>
-      <div class="stack-row">
-        <span class="stack-name">Jarvis</span>
-        <span class="stack-role">Orquestador AI — decisiones autonomas</span>
-        <span class="stack-badge badge-propio">Propio</span>
-      </div>
-      <div class="stack-row">
-        <span class="stack-name">Mission Control</span>
-        <span class="stack-role">Infraestructura de agentes (TypeScript + SQLite)</span>
-        <span class="stack-badge badge-infra">Infra</span>
-      </div>
-    </div>
   </div>
 </section>
 
