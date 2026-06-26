@@ -146,3 +146,31 @@ Somos la capa de inteligencia que vive dentro de tu negocio.
 ---
 
 *EurekaMS · Mind Services · Una empresa EurekaMD-net · Junio 2026*
+
+---
+
+## CHANGELOG
+
+### v1.2 — 2026-06-26
+
+**Demos interactivos por pilar:**
+- Cada pilar (Intelligence Ops, Voice Solutions, Territory Ops) tiene un demo animado inline.
+- Los demos se integraron directamente bajo su pilar card (arquitectura refactorizada desde secciones separadas).
+- Cadencia compartida: chat izquierda + dashboard derecha, loop automático, activación de pestaña por respuesta del agente.
+
+**Voice Solutions demo (nuevo):**
+- Paleta verde/teal, 3 turnos de conversación.
+- Dashboard de llamadas: distribución por resultado, KPIs, tabla detallada.
+- Datos simulados: 12 leads, 62% contacto, 38% conversión, 2:51 prom.
+
+**Ajustes de copy:**
+- Pilar Territory Ops: removido "10+ tiendas" del tag secundario — queda solo "Retail especializado en Fit Comercial".
+
+**Spacing:**
+- Reducción global de padding de secciones y márgenes entre módulos para experiencia menos cluttered.
+
+**Learnings técnicos:**
+- Los demos como IIFE independientes son portables y no interfieren entre sí.
+- La activación de pestaña al responder el agente crea la ilusión de causa-efecto natural.
+- Paletas distintas por pilar (azul / teal / ámbar) permiten diferenciar módulos sin necesidad de separadores visuales.
+- El loop fade-out → reset → fade-in requiere que el timer se resetee junto con el estado visual.

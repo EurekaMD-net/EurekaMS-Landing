@@ -134,18 +134,18 @@
     .btn-secondary:hover { border-color: var(--amber); color: var(--amber); transform: translateY(-2px); }
 
     /* Sections */
-    section { padding: 6rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
     .container { max-width: 1200px; margin: 0 auto; }
     .section-label {
       font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
       color: var(--amber); letter-spacing: 0.12em; text-transform: uppercase;
-      margin-bottom: 1rem; display: block;
+      margin-bottom: 0.75rem; display: block;
     }
     h2 {
       font-size: clamp(1.75rem, 4vw, 3rem); font-weight: 800;
-      letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1rem;
+      letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 0.75rem;
     }
-    .section-sub { font-size: 1.1rem; color: var(--text-muted); max-width: 560px; line-height: 1.7; margin-bottom: 3rem; }
+    .section-sub { font-size: 1.1rem; color: var(--text-muted); max-width: 560px; line-height: 1.7; margin-bottom: 2rem; }
 
     /* Bento grid */
     .bento {
@@ -184,7 +184,9 @@
     .fade-in-d3 { transition-delay: 0.3s; }
 
     /* Pilares */
-    .pilares-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .pilar-modulo { margin-bottom: 3rem; }
+    .pilar-modulo:last-child { margin-bottom: 0; }
+    .pilar-card-row { margin-top: 1.25rem; }
     .pilar-card {
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
       padding: 2rem; position: relative; overflow: hidden;
@@ -286,7 +288,7 @@
       .bento { grid-template-columns: 1fr 1fr; }
       .bento-cell.hero-cell { grid-column: span 2; grid-row: span 1; }
       .bento-cell.span2 { grid-column: span 2; }
-      .pilares-grid { grid-template-columns: 1fr; }
+      .pilar-card-row { grid-template-columns: 1fr; }
       .stack-grid { grid-template-columns: 1fr; }
       .quien-grid { grid-template-columns: 1fr 1fr; }
       .form-grid { grid-template-columns: 1fr; }
@@ -391,51 +393,787 @@
     <h2>Todo lo que necesitas<br>para operar con inteligencia</h2>
     <p class="section-sub">Tres modulos independientes que se potencian entre si. Contrata uno o los tres.</p>
 
-    <div class="pilares-grid">
-
-      <div class="pilar-card fade-in">
-        <div class="pilar-icon">
-          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-        </div>
-        <h3>Intelligence Ops</h3>
-        <p>Analisis de inventario, throughput y comportamiento de compra. Tu tablero de decisiones en tiempo real para retail especializado.</p>
-        <div>
-          <span class="pilar-tag">Stock Analyzer</span>
-          <span class="pilar-tag">Throughput AI</span>
-          <span class="pilar-tag">Demand Forecast</span>
-          <span class="pilar-tag">Wilab</span>
-        </div>
-      </div>
-
-      <div class="pilar-card fade-in fade-in-d1">
-        <div class="pilar-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"></path></svg>
-        </div>
-        <h3>Voice Solutions</h3>
-        <p>Agente de voz AI para prospeccion outbound y atencion inbound. Habla con tus leads antes de que lleguen a un humano.</p>
-        <div>
-          <span class="pilar-tag">PipeSong</span>
-          <span class="pilar-tag">Pipecat</span>
-          <span class="pilar-tag">Deepgram STT</span>
-          <span class="pilar-tag">Kokoro TTS</span>
+    <!-- MODULO 1: Intelligence Ops -->
+    <div class="pilar-modulo">
+      <div class="pilar-card-row">
+        <div class="pilar-card fade-in">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
+          <h3>Intelligence Ops</h3>
+          <p>Analisis de inventario, throughput y comportamiento de compra. Tu tablero de decisiones en tiempo real para retail especializado.</p>
+          <div>
+            <span class="pilar-tag">Stock Analyzer</span>
+            <span class="pilar-tag">Throughput AI</span>
+            <span class="pilar-tag">Demand Forecast</span>
+            <span class="pilar-tag">Wilab</span>
+          </div>
         </div>
       </div>
+      <!-- Demo Intelligence Ops -->
+  <div class="container">
+    <p style="font-size:0.85rem; color:var(--text-dim); margin-top:1.25rem; margin-bottom:0.75rem; font-style:italic;">↓ Sesion en vivo — lenguaje natural, SQL ejecutado, graficas y plan de accion</p>
 
-      <div class="pilar-card fade-in fade-in-d2">
-        <div class="pilar-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></svg>
+    <style>
+      .demo-outer { border-radius: 16px; overflow: hidden; border: 1px solid #1E1E2E; box-shadow: 0 0 80px rgba(99,102,241,0.12); transition: opacity 0.6s ease; margin-top: 0.75rem; }
+      .demo-outer.fading { opacity: 0; }
+      .demo-header-bar { background: #16161f; padding: 12px 20px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #1e1e2e; }
+      .demo-dot { width: 12px; height: 12px; border-radius: 50%; }
+      .demo-dot.r { background: #ff5f57; } .demo-dot.y { background: #ffbd2e; } .demo-dot.g { background: #28c840; }
+      .demo-header-bar .demo-title { margin-left: 12px; font-size: 13px; color: #6b7280; font-family: var(--mono); }
+      .demo-grid { display: grid; grid-template-columns: 1fr 340px; height: 560px; }
+      .demo-chat-panel { border-right: 1px solid #1e1e2e; display: flex; flex-direction: column; }
+      .demo-chat-header { padding: 10px 16px; font-size: 11px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid #1e1e2e; }
+      .demo-chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; scrollbar-width: thin; scrollbar-color: #1e1e2e transparent; }
+      .demo-msg { display: flex; flex-direction: column; gap: 4px; opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s ease; }
+      .demo-msg.visible { opacity: 1; transform: none; }
+      .demo-msg-role { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+      .demo-msg.user .demo-msg-role { color: #818cf8; } .demo-msg.agent .demo-msg-role { color: #34d399; }
+      .demo-msg-bubble { background: #1a1a28; border-radius: 8px; padding: 10px 12px; font-size: 13px; line-height: 1.55; color: #cbd5e1; }
+      .demo-msg.user .demo-msg-bubble { background: #1e1a35; }
+      .demo-sql-block { background: #0d0d18; border: 1px solid #2d2d44; border-radius: 6px; padding: 8px 10px; font-family: var(--mono); font-size: 11.5px; line-height: 1.7; margin-top: 8px; color: #a5b4fc; }
+      .demo-sql-block .kw { color: #f472b6; font-weight: 600; }
+      .demo-sql-exec { font-size: 10px; color: #4b5563; margin-top: 6px; }
+      .demo-typing { display: flex; gap: 4px; align-items: center; padding: 4px 0; }
+      .demo-typing span { width: 6px; height: 6px; background: #34d399; border-radius: 50%; animation: demobounce 1.2s infinite; }
+      .demo-typing span:nth-child(2) { animation-delay: .2s; } .demo-typing span:nth-child(3) { animation-delay: .4s; }
+      @keyframes demobounce { 0%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-5px); } }
+      .demo-data-panel { display: flex; flex-direction: column; background: #0e0e18; }
+      .demo-data-header { padding: 10px 16px; font-size: 11px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid #1e1e2e; }
+      .demo-data-tabs { display: flex; border-bottom: 1px solid #1e1e2e; }
+      .demo-data-tab { flex: 1; text-align: center; padding: 8px 4px; font-size: 11px; color: #4b5563; cursor: pointer; transition: color .2s, border-bottom .2s; border-bottom: 2px solid transparent; }
+      .demo-data-tab.active { color: #a5b4fc; border-bottom-color: #6366f1; }
+      .demo-data-content { flex: 1; overflow-y: auto; padding: 12px; scrollbar-width: thin; scrollbar-color: #1e1e2e transparent; }
+      .demo-chart-title { font-size: 10px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px; }
+      .demo-bar-row { margin-bottom: 8px; opacity: 0; transform: translateX(-6px); transition: opacity .3s ease, transform .3s ease; }
+      .demo-bar-row.visible { opacity: 1; transform: none; }
+      .demo-bar-label { display: flex; justify-content: space-between; font-size: 10px; color: #9ca3af; margin-bottom: 2px; }
+      .demo-bar-track { height: 6px; background: #1a1a28; border-radius: 3px; overflow: hidden; margin-bottom: 2px; }
+      .demo-bar-fill { height: 100%; border-radius: 3px; transition: width 0.7s cubic-bezier(.4,0,.2,1); }
+      .demo-bar-fill.sales { background: #818cf8; } .demo-bar-fill.stock { background: #34d399; }
+      .demo-sku-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+      .demo-sku-table th { text-align: left; padding: 4px 6px; color: #4b5563; font-weight: 600; border-bottom: 1px solid #1e1e2e; }
+      .demo-sku-table td { padding: 4px 6px; border-bottom: 1px solid #1a1a28; color: #cbd5e1; }
+      .demo-sku-table tr { opacity: 0; transition: opacity .25s ease; }
+      .demo-sku-table tr.visible { opacity: 1; }
+      .demo-badge { display: inline-block; padding: 1px 5px; border-radius: 4px; font-size: 9px; font-weight: 600; }
+      .demo-badge.bajo { background: #7f1d1d; color: #fca5a5; } .demo-badge.normal { background: #14532d; color: #86efac; } .demo-badge.exceso { background: #1e1b4b; color: #a5b4fc; }
+      .demo-redist-table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+      .demo-redist-table th { text-align: left; padding: 5px 6px; color: #4b5563; font-weight: 600; border-bottom: 1px solid #1e1e2e; }
+      .demo-redist-table td { padding: 5px 6px; border-bottom: 1px solid #1a1a28; color: #cbd5e1; vertical-align: top; }
+      .demo-redist-table tr { opacity: 0; transition: opacity .3s ease; }
+      .demo-redist-table tr.visible { opacity: 1; }
+      .demo-arrow { color: #6366f1; margin: 0 3px; }
+      td.demo-revenue { color: #34d399; font-weight: 600; }
+      .demo-summary-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
+      .demo-s-card { background: #1a1a28; border: 1px solid #1e1e2e; border-radius: 8px; padding: 12px; opacity: 0; transform: translateY(4px); transition: opacity .35s ease, transform .35s ease; }
+      .demo-s-card.visible { opacity: 1; transform: none; }
+      .demo-s-label { font-size: 9px; color: #6b7280; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
+      .demo-s-value { font-size: 22px; font-weight: 700; color: #a5b4fc; }
+      .demo-s-sub { font-size: 9px; color: #4b5563; margin-top: 2px; }
+      @media (max-width: 700px) {
+        .demo-grid { grid-template-columns: 1fr; height: auto; }
+        .demo-chat-panel { border-right: none; border-bottom: 1px solid #1e1e2e; height: 400px; }
+        .demo-data-panel { height: 360px; }
+      }
+    </style>
+
+    <div class="demo-outer" id="demoWrapper">
+      <div class="demo-header-bar">
+        <div class="demo-dot r"></div><div class="demo-dot y"></div><div class="demo-dot g"></div>
+        <span class="demo-title">Intelligence Ops · Agente de Inventario — Demo</span>
+      </div>
+      <div class="demo-grid">
+        <div class="demo-chat-panel">
+          <div class="demo-chat-header">Conversacion</div>
+          <div class="demo-chat-messages" id="demoChatMessages"></div>
         </div>
-        <h3>Territory Ops</h3>
-        <p>Expansion con riesgo administrado. Visualiza oportunidades geograficas con datos reales antes de mover la pieza.</p>
-        <div>
-          <span class="pilar-tag">DENUE 6.1M</span>
-          <span class="pilar-tag">Mexico Uncharted</span>
-          <span class="pilar-tag">Geo AI</span>
-          <span class="pilar-tag">Competencia</span>
+        <div class="demo-data-panel">
+          <div class="demo-data-header">Resultados en Vivo</div>
+          <div class="demo-data-tabs">
+            <div class="demo-data-tab active" id="demo-tab-sku"     onclick="demoSwitchTab('sku')">SKUs Top</div>
+            <div class="demo-data-tab"        id="demo-tab-redist"  onclick="demoSwitchTab('redist')">Redistribucion</div>
+            <div class="demo-data-tab"        id="demo-tab-summary" onclick="demoSwitchTab('summary')">Resumen</div>
+          </div>
+          <div class="demo-data-content" id="demoDataContent"></div>
         </div>
       </div>
-
     </div>
+  </div>
+    </div>
+<script>
+(function() {
+var skuData = [
+  { label: "SK-10245", sales: 19677, stock: 3614,  days: 5,   status: "bajo"   },
+  { label: "SK-10267", sales: 14051, stock: 19187, days: 41,  status: "normal" },
+  { label: "SK-11033", sales:  6666, stock: 94720, days: 425, status: "exceso" },
+  { label: "SK-11201", sales:  6381, stock: 3986,  days: 19,  status: "normal" },
+  { label: "SK-11289", sales:  4930, stock: 2445,  days: 15,  status: "bajo"   },
+  { label: "SK-12044", sales:  2503, stock: 1802,  days: 22,  status: "normal" },
+  { label: "SK-12310", sales:  2192, stock: 3238,  days: 44,  status: "normal" },
+  { label: "SK-12507", sales:  1186, stock: 33025, days: 834, status: "exceso" },
+  { label: "SK-12731", sales:  1002, stock: 1655,  days: 49,  status: "normal" },
+  { label: "SK-13045", sales:   740, stock: 1577,  days: 64,  status: "normal" },
+];
+var redistribution = [
+  { from: "POLANCO FLAGSHIP",  to: "SANTA FE OUTLET",    sku: "SK-80200-2552", qty:  1, revenue: 3084.45 },
+  { from: "CANCUN CENTRO",     to: "MERIDA MONTEJO",     sku: "SK-08440-7550", qty:  1, revenue: 2964.66 },
+  { from: "CDMX NORTE",        to: "GDL EXPO",           sku: "SK-01020-6450", qty: 31, revenue: 2929.30 },
+  { from: "MTY VALLE",         to: "PUEBLA ANGELOPOLIS", sku: "SK-04580-2775", qty:  1, revenue: 2532.74 },
+  { from: "CDMX NORTE",        to: "QUERETARO CENTRO",   sku: "SK-16780-0296", qty: 72, revenue: 2385.34 },
+  { from: "TLAQUEPAQUE",       to: "QUERETARO CENTRO",   sku: "SK-08440-1905", qty:  2, revenue: 2318.09 },
+  { from: "MTY CUMBRES",       to: "QUERETARO CENTRO",   sku: "SK-80040-0036", qty:  3, revenue: 2299.14 },
+  { from: "CDMX SUR",          to: "QUERETARO CENTRO",   sku: "SK-08440-1785", qty:  1, revenue: 2231.90 },
+  { from: "CDMX NORTE",        to: "LEON FORUM",         sku: "SK-14240-3446", qty: 36, revenue: 2169.83 },
+  { from: "LEON FORUM",        to: "AGUASCALIENTES CTR", sku: "SK-08440-1785", qty:  1, revenue: 2068.10 },
+];
+var chatScript = [
+  { delay: 500,  role: "user",  text: "Muestrame un ranking de mis mejores SKUs — ventas, inventario disponible, dias hasta agotamiento y estatus de cobertura (bajo, normal, exceso, agotado)." },
+  { delay: 1400, role: "agent", html: 'Consultando la vista materializada de SKUs\u2026<div class="demo-sql-block"><span class="kw">SELECT</span> sku, total_sales_30d <span class="kw">AS</span> ventas, total_stock <span class="kw">AS</span> inventario, days_of_cover <span class="kw">AS</span> dias, coverage_status <span class="kw">AS</span> estatus <span class="kw">FROM</span> sku_master_mv <span class="kw">WHERE</span> total_sales_30d &gt; 0 <span class="kw">ORDER BY</span> total_sales_30d <span class="kw">DESC</span> <span class="kw">LIMIT</span> 10;</div><div class="demo-sql-exec">Ejecutado en 0ms &middot; 10 filas</div>', onShow: function(){ demoRenderSKUTable(); } },
+  { delay: 2800, role: "agent", text: "Aqui esta el ranking de tus productos mas vendidos en los ultimos 30 dias, con niveles de inventario y estatus de cobertura.\n\nHallazgos clave: El lider SK-10245 registro 19,677 ventas pero solo le quedan 5 dias de cobertura — riesgo de desabasto inminente. SK-11033 tiene 425 dias de stock: producto de rotacion lenta acumulando capital." },
+  { delay: 2000, role: "user",  text: "Dame una grafica de barras lado a lado para comparar visualmente ventas contra inventario." },
+  { delay: 1300, role: "agent", text: "Generando visualizacion comparativa para los Top 10 SKUs\u2026", onShow: function(){ demoSwitchTab('sku'); demoRenderSKUChart(); } },
+  { delay: 2200, role: "agent", text: "El contraste entre ventas e inventario es inmediatamente visible. SK-11033 tiene un inventario muy superior a su velocidad de venta — riesgo de producto de movimiento lento. El lider SK-10245 muestra el patron opuesto: en riesgo inminente de agotamiento." },
+  { delay: 2000, role: "user",  text: "Propone un plan de redistribucion — sin compras nuevas. Cuales 10 movimientos entre sucursales me dan la mayor reduccion de riesgo de perdida de ventas?" },
+  { delay: 1500, role: "agent", text: "Analizando desequilibrios entre sucursales. Identificando sucursales con stock cero en SKUs criticos vs sucursales con exceso de inventario\u2026", onShow: function(){ demoSwitchTab('redist'); demoRenderRedistTable(); } },
+  { delay: 2600, role: "agent", text: "Plan de redistribucion listo. Identifique sucursales con stock cero en SKUs criticos que vendieron bien en las ultimas 4 semanas, emparejadas con sucursales donadoras que tienen inventario en exceso. Sin una sola compra nueva.", onShow: function(){ demoSwitchTab('summary'); demoRenderSummary(); } },
+];
+var demoCurTab = 'sku';
+var chatEl = document.getElementById('demoChatMessages');
+function demoAddTyping() {
+  var el = document.createElement('div');
+  el.className = 'demo-msg agent visible'; el.id = 'demo-typing';
+  el.innerHTML = '<span class="demo-msg-role">Agente</span><div class="demo-typing"><span></span><span></span><span></span></div>';
+  chatEl.appendChild(el); chatEl.scrollTop = chatEl.scrollHeight;
+}
+function demoRemoveTyping() { var el=document.getElementById('demo-typing'); if(el) el.remove(); }
+function demoAddMessage(step) {
+  var el = document.createElement('div');
+  el.className = 'demo-msg ' + step.role;
+  var label = step.role === 'user' ? 'Tu' : 'Agente';
+  var body = step.html ? '<div class="demo-msg-bubble">' + step.html + '</div>' : '<div class="demo-msg-bubble">' + (step.text||'').replace(/\n/g,'<br>') + '</div>';
+  el.innerHTML = '<span class="demo-msg-role">' + label + '</span>' + body;
+  chatEl.appendChild(el);
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ el.classList.add('visible'); }); });
+  chatEl.scrollTop = chatEl.scrollHeight;
+  if (step.onShow) setTimeout(step.onShow, 400);
+}
+function demoRun(idx) {
+  if (idx >= chatScript.length) {
+    setTimeout(function(){
+      var w = document.getElementById('demoWrapper');
+      w.classList.add('fading');
+      setTimeout(function(){
+        chatEl.innerHTML = ''; document.getElementById('demoDataContent').innerHTML = '';
+        demoCurTab = 'sku';
+        document.querySelectorAll('.demo-data-tab').forEach(function(t){ t.classList.remove('active'); });
+        document.getElementById('demo-tab-sku').classList.add('active');
+        w.classList.remove('fading'); demoRun(0);
+      }, 700);
+    }, 5000);
+    return;
+  }
+  var step = chatScript[idx];
+  setTimeout(function(){
+    if (step.role === 'agent') {
+      demoAddTyping();
+      setTimeout(function(){ demoRemoveTyping(); demoAddMessage(step); demoRun(idx+1); }, 1100);
+    } else { demoAddMessage(step); demoRun(idx+1); }
+  }, step.delay);
+}
+function demoSwitchTab(name) {
+  demoCurTab = name;
+  document.querySelectorAll('.demo-data-tab').forEach(function(t){ t.classList.remove('active'); });
+  document.getElementById('demo-tab-'+name).classList.add('active');
+}
+function demoRenderSKUTable() {
+  if (demoCurTab !== 'sku') demoSwitchTab('sku');
+  var rows = skuData.map(function(d,i){
+    return '<tr id="dskur-'+i+'"><td style="font-family:monospace">'+d.label+'</td><td>'+d.sales.toLocaleString()+'</td><td>'+d.stock.toLocaleString()+'</td><td>'+d.days+'</td><td><span class="demo-badge '+d.status+'">'+d.status.charAt(0).toUpperCase()+d.status.slice(1)+'</span></td></tr>';
+  }).join('');
+  document.getElementById('demoDataContent').innerHTML = '<div class="demo-chart-title">Top SKUs &middot; Ultimos 30 dias</div><table class="demo-sku-table"><thead><tr class="visible"><th>SKU</th><th>Ventas</th><th>Stock</th><th>Dias</th><th>Estatus</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  skuData.forEach(function(_,i){ setTimeout(function(){ var r=document.getElementById('dskur-'+i); if(r) r.classList.add('visible'); }, i*90); });
+}
+function demoRenderSKUChart() {
+  var maxS=Math.max.apply(null,skuData.map(function(d){ return d.sales; }));
+  var maxK=Math.max.apply(null,skuData.map(function(d){ return d.stock; }));
+  var bars=skuData.map(function(d,i){
+    return '<div class="demo-bar-row" id="dbar-'+i+'"><div class="demo-bar-label"><span>'+d.label+'</span><span style="color:#818cf8">'+d.sales.toLocaleString()+' vtas</span></div><div class="demo-bar-track"><div class="demo-bar-fill sales" id="dsf-'+i+'" style="width:0%"></div></div><div class="demo-bar-label" style="margin-top:2px"><span style="color:#4b5563">Stock</span><span style="color:#34d399">'+d.stock.toLocaleString()+'</span></div><div class="demo-bar-track"><div class="demo-bar-fill stock" id="dst-'+i+'" style="width:0%"></div></div></div>';
+  }).join('');
+  document.getElementById('demoDataContent').innerHTML='<div class="demo-chart-title">Ventas vs Inventario &middot; Top 10 SKUs</div>'+bars;
+  skuData.forEach(function(d,i){ setTimeout(function(){ document.getElementById('dbar-'+i).classList.add('visible'); setTimeout(function(){ document.getElementById('dsf-'+i).style.width=(d.sales/maxS*100)+'%'; document.getElementById('dst-'+i).style.width=Math.min(d.stock/maxK*100,100)+'%'; },60); },i*100); });
+}
+function demoRenderRedistTable() {
+  var rows=redistribution.map(function(r,i){
+    return '<tr id="drow-'+i+'"><td>'+r.from+'<span class="demo-arrow">&rarr;</span>'+r.to+'</td><td style="font-family:monospace;font-size:9px">'+r.sku+'</td><td>'+r.qty+'</td><td class="demo-revenue">$'+r.revenue.toLocaleString('en-US',{minimumFractionDigits:2})+'</td></tr>';
+  }).join('');
+  document.getElementById('demoDataContent').innerHTML='<table class="demo-redist-table"><thead><tr class="visible"><th>Movimiento</th><th>SKU</th><th>Cant.</th><th>Ingreso</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  redistribution.forEach(function(_,i){ setTimeout(function(){ var r=document.getElementById('drow-'+i); if(r) r.classList.add('visible'); },i*120); });
+}
+function demoRenderSummary() {
+  var totalRev=redistribution.reduce(function(s,r){ return s+r.revenue; },0);
+  var totalU=redistribution.reduce(function(s,r){ return s+r.qty; },0);
+  document.getElementById('demoDataContent').innerHTML='<div class="demo-chart-title">Resumen del plan de redistribucion</div><div class="demo-summary-cards"><div class="demo-s-card" id="dsc0"><div class="demo-s-label">Movimientos</div><div class="demo-s-value">10</div><div class="demo-s-sub">sucursales optimizadas</div></div><div class="demo-s-card" id="dsc1"><div class="demo-s-label">Ingreso potencial</div><div class="demo-s-value">$'+(totalRev/1000).toFixed(1)+'K</div><div class="demo-s-sub">MXN desbloqueados</div></div><div class="demo-s-card" id="dsc2"><div class="demo-s-label">Unidades movidas</div><div class="demo-s-value">'+totalU+'</div><div class="demo-s-sub">sin nuevas compras</div></div><div class="demo-s-card" id="dsc3"><div class="demo-s-label">Mayor movimiento</div><div class="demo-s-value">$3,084</div><div class="demo-s-sub">Polanco &rarr; Santa Fe</div></div></div>';
+  [0,1,2,3].forEach(function(i){ setTimeout(function(){ document.getElementById('dsc'+i).classList.add('visible'); },i*150); });
+}
+demoRun(0);
+})();
+</script>
+
+    <!-- MODULO 2: Voice Solutions -->
+    <div class="pilar-modulo">
+      <div class="pilar-card-row">
+        <div class="pilar-card fade-in fade-in-d1">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.06 1.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"></path></svg>
+          </div>
+          <h3>Voice Solutions</h3>
+          <p>Agente de voz AI para prospeccion outbound y atencion inbound. Habla con tus leads antes de que lleguen a un humano.</p>
+          <div>
+            <span class="pilar-tag">PipeSong</span>
+            <span class="pilar-tag">Pipecat</span>
+            <span class="pilar-tag">Deepgram STT</span>
+            <span class="pilar-tag">Kokoro TTS</span>
+          </div>
+        </div>
+      </div>
+      <!-- Voice Solutions: demo live -->
+      <p style="font-size:0.8rem;color:var(--text-muted);margin:0.25rem 0 0.75rem;font-style:italic;">Agente consultando el dashboard de llamadas en tiempo real</p>
+      <style>
+      .vdemo-outer { border-radius: 16px; overflow: hidden; border: 1px solid #0d2417; box-shadow: 0 0 80px rgba(16,185,129,0.09); transition: opacity 0.6s ease; margin-top: 0.75rem; }
+      .vdemo-outer.fading { opacity: 0; }
+      .vdemo-header-bar { background: #060f0a; padding: 12px 20px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #0d2417; }
+      .vdemo-dot { width: 12px; height: 12px; border-radius: 50%; }
+      .vdemo-dot.r { background: #ff5f57; } .vdemo-dot.y { background: #ffbd2e; } .vdemo-dot.g { background: #28c840; }
+      .vdemo-header-bar .vdemo-title { margin-left: 12px; font-size: 13px; color: #4b6e5c; font-family: var(--mono); }
+      .vdemo-grid { display: grid; grid-template-columns: 1fr 360px; height: 580px; }
+      .vdemo-chat-panel { border-right: 1px solid #0d2417; display: flex; flex-direction: column; background: #050c08; }
+      .vdemo-chat-header { padding: 10px 16px; font-size: 11px; font-weight: 600; color: #4b6e5c; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid #0d2417; }
+      .vdemo-chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; scrollbar-width: thin; scrollbar-color: #0d2417 transparent; }
+      .vdemo-msg { display: flex; flex-direction: column; gap: 4px; opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s ease; }
+      .vdemo-msg.visible { opacity: 1; transform: none; }
+      .vdemo-msg-role { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+      .vdemo-msg.user .vdemo-msg-role { color: #10b981; } .vdemo-msg.agent .vdemo-msg-role { color: #34d399; }
+      .vdemo-msg-bubble { background: #0a1510; border-radius: 8px; padding: 10px 12px; font-size: 13px; line-height: 1.55; color: #d1fae5; }
+      .vdemo-msg.user .vdemo-msg-bubble { background: #081209; border: 1px solid #0d2417; }
+      .vdemo-sql-block { background: #04080a; border: 1px solid #0d2417; border-radius: 6px; padding: 8px 10px; font-family: var(--mono); font-size: 11.5px; line-height: 1.7; margin-top: 8px; color: #6ee7b7; }
+      .vdemo-sql-block .kw { color: #f472b6; font-weight: 600; }
+      .vdemo-sql-block .cm { color: #374151; font-style: italic; }
+      .vdemo-sql-exec { font-size: 10px; color: #2d4a3e; margin-top: 6px; }
+      .vdemo-typing { display: flex; gap: 4px; align-items: center; padding: 4px 0; }
+      .vdemo-typing span { width: 6px; height: 6px; background: #10b981; border-radius: 50%; animation: vdemobounce 1.2s infinite; }
+      .vdemo-typing span:nth-child(2) { animation-delay: .2s; } .vdemo-typing span:nth-child(3) { animation-delay: .4s; }
+      @keyframes vdemobounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+      .vdemo-data-panel { display: flex; flex-direction: column; background: #050c08; }
+      .vdemo-data-header { padding: 10px 16px; font-size: 11px; font-weight: 600; color: #4b6e5c; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid #0d2417; }
+      .vdemo-data-tabs { display: flex; border-bottom: 1px solid #0d2417; }
+      .vdemo-data-tab { flex: 1; text-align: center; padding: 8px 4px; font-size: 11px; color: #2d4a3e; cursor: pointer; transition: color .2s, border-bottom .2s; border-bottom: 2px solid transparent; }
+      .vdemo-data-tab.active { color: #10b981; border-bottom-color: #10b981; }
+      .vdemo-data-content { flex: 1; overflow-y: auto; padding: 12px; scrollbar-width: thin; scrollbar-color: #0d2417 transparent; }
+      .vdemo-calls-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+      .vdemo-calls-table th { font-size: 10px; color: #4b6e5c; text-transform: uppercase; letter-spacing: .06em; padding: 6px 4px; border-bottom: 1px solid #0d2417; text-align: left; }
+      .vdemo-calls-table td { padding: 7px 4px; border-bottom: 1px solid #0a150f; color: #d1fae5; opacity: 0; transition: opacity .3s ease; }
+      .vdemo-calls-table tr.visible td { opacity: 1; }
+      .vdemo-status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 4px; }
+      .vdemo-status-dot.conv { background: #10b981; }
+      .vdemo-status-dot.hang { background: #f87171; }
+      .vdemo-status-dot.vm { background: #fbbf24; }
+      .vdemo-status-dot.sched { background: #818cf8; }
+      .vdemo-kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .vdemo-kpi-card { background: #0a1510; border: 1px solid #0d2417; border-radius: 10px; padding: 12px; opacity: 0; transition: opacity .4s ease; }
+      .vdemo-kpi-card.visible { opacity: 1; }
+      .vdemo-kpi-val { font-size: 22px; font-weight: 700; color: #10b981; font-family: var(--mono); }
+      .vdemo-kpi-label { font-size: 10px; color: #4b6e5c; text-transform: uppercase; letter-spacing: .05em; margin-top: 2px; }
+      .vdemo-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+      .vdemo-bar-label { font-size: 11px; color: #4b6e5c; width: 80px; flex-shrink: 0; }
+      .vdemo-bar-track { flex: 1; height: 8px; background: #0d2417; border-radius: 4px; overflow: hidden; }
+      .vdemo-bar-fill { height: 100%; border-radius: 4px; width: 0; transition: width 0.9s cubic-bezier(.4,0,.2,1); }
+      .vdemo-bar-fill.conv { background: linear-gradient(90deg,#10b981,#34d399); }
+      .vdemo-bar-fill.hang { background: linear-gradient(90deg,#ef4444,#f87171); }
+      .vdemo-bar-fill.vm { background: linear-gradient(90deg,#d97706,#fbbf24); }
+      .vdemo-bar-fill.sched { background: linear-gradient(90deg,#4f46e5,#818cf8); }
+      .vdemo-bar-pct { font-size: 10px; color: #6ee7b7; width: 30px; text-align: right; }
+      @media (max-width: 700px) { .vdemo-grid { grid-template-columns: 1fr; height: auto; } .vdemo-data-panel { border-top: 1px solid #0d2417; height: 380px; } }
+      </style>
+
+      <div class="vdemo-outer" id="vdemoWrapper">
+        <div class="vdemo-header-bar">
+          <div class="vdemo-dot r"></div><div class="vdemo-dot y"></div><div class="vdemo-dot g"></div>
+          <span class="vdemo-title">voice-ops — agente de campañas · PipeSong + Deepgram</span>
+        </div>
+        <div class="vdemo-grid">
+          <!-- Chat panel -->
+          <div class="vdemo-chat-panel">
+            <div class="vdemo-chat-header">Conversación con el agente</div>
+            <div class="vdemo-chat-messages" id="vdemoChatMessages"></div>
+          </div>
+          <!-- Data panel -->
+          <div class="vdemo-data-panel">
+            <div class="vdemo-data-header">Dashboard de llamadas</div>
+            <div class="vdemo-data-tabs">
+              <div class="vdemo-data-tab active" id="vdemoTab0" onclick="vdemoShowTab(0)">Llamadas</div>
+              <div class="vdemo-data-tab" id="vdemoTab1" onclick="vdemoShowTab(1)">Resultados</div>
+              <div class="vdemo-data-tab" id="vdemoTab2" onclick="vdemoShowTab(2)">KPIs</div>
+            </div>
+            <div class="vdemo-data-content" id="vdemoDataContent"></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+      (function() {
+        function vdemoShowTab(idx) {
+          [0,1,2].forEach(i => {
+            document.getElementById('vdemoTab'+i).classList.toggle('active', i===idx);
+          });
+          const c = document.getElementById('vdemoDataContent');
+          if (idx === 0) { c.innerHTML = vdemoCallsTable(); vdemoAnimateRows('vdemoCallRow'); }
+          else if (idx === 1) { c.innerHTML = vdemoResultsBars(); requestAnimationFrame(() => requestAnimationFrame(vdemoAnimateBars)); }
+          else { c.innerHTML = vdemoKpiGrid(); requestAnimationFrame(() => requestAnimationFrame(vdemoAnimateKpis)); }
+        }
+        window.vdemoShowTab = vdemoShowTab;
+
+        function vdemoCallsTable() {
+          const rows = [
+            ['09:02', 'Ana Martínez', '2:14', 'conv'],
+            ['09:11', 'Carlos Reyes', '0:08', 'hang'],
+            ['09:23', 'Dulce López', '3:41', 'conv'],
+            ['09:35', 'Pedro Sánchez', '0:00', 'vm'],
+            ['09:47', 'Laura Torres', '1:52', 'conv'],
+            ['10:05', 'Miguel Ruiz', '0:12', 'hang'],
+            ['10:18', 'Sofía García', '4:07', 'conv'],
+            ['10:29', 'Roberto Díaz', '0:00', 'sched'],
+          ];
+          const statusLabel = { conv:'Conversó', hang:'Colgó', vm:'Buzón', sched:'Reagendó' };
+          return `<table class="vdemo-calls-table"><thead><tr><th>Hora</th><th>Lead</th><th>Dur.</th><th>Estado</th></tr></thead><tbody>
+            ${rows.map((r,i)=>`<tr class="vdemoCallRow" id="vdemoCallRow${i}"><td>${r[0]}</td><td style="max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r[1]}</td><td style="font-family:var(--mono);font-size:11px">${r[2]}</td><td><span class="vdemo-status-dot ${r[3]}"></span>${statusLabel[r[3]]}</td></tr>`).join('')}
+          </tbody></table>`;
+        }
+
+        function vdemoResultsBars() {
+          const bars = [
+            ['Conversó', 'conv', 50],
+            ['Colgó', 'hang', 20],
+            ['Buzón', 'vm', 18],
+            ['Reagendó', 'sched', 12],
+          ];
+          return `<div style="margin-bottom:10px"><div style="font-size:10px;color:#4b6e5c;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px">Distribución de resultados (8 llamadas)</div>
+            ${bars.map((b,i)=>`<div class="vdemo-bar-row"><span class="vdemo-bar-label">${b[0]}</span><div class="vdemo-bar-track"><div class="vdemo-bar-fill ${b[1]}" id="vdemoBar${i}" style="width:0%"></div></div><span class="vdemo-bar-pct" id="vdemoBarPct${i}">0%</span></div>`).join('')}
+          </div>`;
+        }
+
+        function vdemoAnimateBars() {
+          const targets = [50, 20, 18, 12];
+          targets.forEach((pct, i) => {
+            const el = document.getElementById('vdemoBar'+i);
+            const pt = document.getElementById('vdemoBarPct'+i);
+            if (el) { setTimeout(() => { el.style.width = pct+'%'; if(pt) pt.textContent = pct+'%'; }, i*150); }
+          });
+        }
+
+        function vdemoKpiGrid() {
+          const kpis = [
+            ['62%', 'Tasa de contacto'],
+            ['2:51', 'Duración prom.'],
+            ['38%', 'Tasa de conversión'],
+            ['12', 'Leads procesados'],
+          ];
+          return `<div class="vdemo-kpi-grid">${kpis.map((k,i)=>`<div class="vdemo-kpi-card" id="vdemoKpi${i}"><div class="vdemo-kpi-val">${k[0]}</div><div class="vdemo-kpi-label">${k[1]}</div></div>`).join('')}</div>`;
+        }
+
+        function vdemoAnimateKpis() {
+          [0,1,2,3].forEach(i => {
+            setTimeout(() => { const el = document.getElementById('vdemoKpi'+i); if(el) el.classList.add('visible'); }, i*120);
+          });
+        }
+
+        function vdemoAnimateRows(cls) {
+          const rows = document.querySelectorAll('.'+cls);
+          rows.forEach((r, i) => setTimeout(() => r.classList.add('visible'), i * 100));
+        }
+
+        // Conversation script
+        const TURNS = [
+          {
+            steps: [
+              { delay: 400,  role: 'user',  text: '¿Cómo van las llamadas de esta mañana? Dame el resumen.' },
+              { delay: 1200, role: 'agent', typing: true },
+              { delay: 2200, role: 'agent', text: 'Consultando el dashboard...', sql: `<span class="kw">SELECT</span> resultado, <span class="kw">COUNT</span>(*) n,\n  <span class="kw">ROUND</span>(AVG(duracion_seg),0) dur_prom\n<span class="kw">FROM</span> llamadas\n<span class="kw">WHERE</span> fecha = CURRENT_DATE\n<span class="kw">GROUP BY</span> resultado\n<span class="kw">ORDER BY</span> n <span class="kw">DESC</span>;\n<span class="cm">-- 4 rows, 12ms</span>`, showTab: 1 },
+              { delay: 3800, role: 'agent', text: 'De 8 llamadas esta mañana: 5 con conversación real (62%), 2 colgaron en <15s, 1 al buzón. Tasa de conversión: 38%. Duración promedio de las exitosas: 2:51.' },
+            ]
+          },
+          {
+            steps: [
+              { delay: 400,  role: 'user',  text: '¿Qué lead tuvo la llamada más larga? Quiero saber el detalle.' },
+              { delay: 1200, role: 'agent', typing: true },
+              { delay: 2200, role: 'agent', text: 'Buscando el top por duración...', sql: `<span class="kw">SELECT</span> nombre, telefono,\n  duracion_seg, resultado,\n  hora_inicio\n<span class="kw">FROM</span> llamadas\n<span class="kw">WHERE</span> fecha = CURRENT_DATE\n<span class="kw">ORDER BY</span> duracion_seg <span class="kw">DESC</span>\n<span class="kw">LIMIT</span> 1;\n<span class="cm">-- 1 row, 8ms</span>`, showTab: 0 },
+              { delay: 3800, role: 'agent', text: 'Sofía García — la llamada más larga: 4:07 minutos, a las 10:18. Resultado: conversó. Lead calificado, se mostró interesada en el plan de expansión. Recomiendo asignársela a un asesor hoy.' },
+            ]
+          },
+          {
+            steps: [
+              { delay: 400,  role: 'user',  text: 'Dame los KPIs consolidados de la campaña de hoy.' },
+              { delay: 1200, role: 'agent', typing: true },
+              { delay: 2200, role: 'agent', text: 'Calculando métricas consolidadas...', sql: `<span class="kw">SELECT</span>\n  COUNT(*) total_llamadas,\n  ROUND(100.0*SUM(CASE WHEN\n    resultado != 'colgó'\n  THEN 1 ELSE 0 END)/COUNT(*),1) tasa_contacto,\n  ROUND(100.0*SUM(CASE WHEN\n    resultado='conv' THEN 1 ELSE 0 END)/COUNT(*),1) conv_rate,\n  ROUND(AVG(duracion_seg)/60.0,2) dur_prom_min\n<span class="kw">FROM</span> llamadas <span class="kw">WHERE</span> fecha=CURRENT_DATE;\n<span class="cm">-- 1 row, 11ms</span>`, showTab: 2 },
+              { delay: 3800, role: 'agent', text: 'KPIs de campaña: 12 leads procesados, contacto real 62%, conversión 38%, duración prom 2:51. El agente de voz manejó el 100% autónomamente — cero intervención humana en esta ronda.' },
+            ]
+          }
+        ];
+
+        let vdemoActive = false;
+        let vdemoObs = null;
+
+        function vdemoRun() {
+          if (vdemoActive) return;
+          vdemoActive = true;
+
+          const chat = document.getElementById('vdemoChatMessages');
+          const wrapper = document.getElementById('vdemoWrapper');
+          if (!chat || !wrapper) return;
+
+          function runTurns(turnIdx) {
+            if (turnIdx >= TURNS.length) {
+              // fade out, reset, loop
+              wrapper.classList.add('fading');
+              setTimeout(() => {
+                chat.innerHTML = '';
+                vdemoShowTab(0);
+                wrapper.classList.remove('fading');
+                setTimeout(() => { vdemoActive = false; vdemoRun(); }, 600);
+              }, 600);
+              return;
+            }
+
+            const turn = TURNS[turnIdx];
+            let typingEl = null;
+
+            function runStep(si) {
+              if (si >= turn.steps.length) {
+                setTimeout(() => runTurns(turnIdx + 1), 1400);
+                return;
+              }
+              const step = turn.steps[si];
+              setTimeout(() => {
+                if (step.typing) {
+                  const el = document.createElement('div');
+                  el.className = 'vdemo-msg agent';
+                  el.innerHTML = `<span class="vdemo-msg-role">Agente</span><div class="vdemo-msg-bubble"><div class="vdemo-typing"><span></span><span></span><span></span></div></div>`;
+                  chat.appendChild(el);
+                  requestAnimationFrame(() => el.classList.add('visible'));
+                  typingEl = el;
+                  chat.scrollTop = chat.scrollHeight;
+                  runStep(si + 1);
+                  return;
+                }
+
+                if (typingEl) { typingEl.remove(); typingEl = null; }
+
+                const el = document.createElement('div');
+                el.className = 'vdemo-msg ' + step.role;
+                const roleLabel = step.role === 'user' ? 'Usuario' : 'Agente';
+                let inner = `<span class="vdemo-msg-role">${roleLabel}</span><div class="vdemo-msg-bubble">${step.text}`;
+                if (step.sql) {
+                  inner += `<div class="vdemo-sql-block">${step.sql}</div><div class="vdemo-sql-exec">▶ Ejecutado · resultado listo</div>`;
+                }
+                inner += '</div>';
+                el.innerHTML = inner;
+                chat.appendChild(el);
+                requestAnimationFrame(() => el.classList.add('visible'));
+                chat.scrollTop = chat.scrollHeight;
+
+                if (step.showTab !== undefined) {
+                  setTimeout(() => vdemoShowTab(step.showTab), 400);
+                }
+
+                runStep(si + 1);
+              }, step.delay);
+            }
+
+            runStep(0);
+          }
+
+          vdemoShowTab(0);
+          runTurns(0);
+        }
+
+        // Start when in viewport
+        vdemoObs = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            vdemoRun();
+            vdemoObs.disconnect();
+          }
+        }, { threshold: 0.2 });
+
+        const wrapper = document.getElementById('vdemoWrapper');
+        if (wrapper) vdemoObs.observe(wrapper);
+      })();
+      </script>
+    </div>
+
+    <!-- MODULO 3: Territory Ops -->
+    <div class="pilar-modulo">
+      <div class="pilar-card-row">
+        <div class="pilar-card fade-in fade-in-d2">
+          <div class="pilar-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></svg>
+          </div>
+          <h3>Territory Ops</h3>
+          <p>Expansion con riesgo administrado. Visualiza oportunidades geograficas con datos reales antes de mover la pieza.</p>
+          <div>
+            <span class="pilar-tag">DENUE 6.1M</span>
+            <span class="pilar-tag">Mexico Uncharted</span>
+            <span class="pilar-tag">Geo AI</span>
+            <span class="pilar-tag">Competencia</span>
+          </div>
+        </div>
+      </div>
+      <!-- Demo Territory Ops -->
+  <div class="container">
+    <p style="font-size:0.85rem; color:var(--text-dim); margin-top:1.25rem; margin-bottom:0.75rem; font-style:italic;">↓ Sesion en vivo — DENUE 6.1M establecimientos, competencia activa y densidad de demanda</p>
+
+    <style>
+      .tdemo-outer { border-radius: 16px; overflow: hidden; border: 1px solid #2A1F00; box-shadow: 0 0 80px rgba(245,158,11,0.08); transition: opacity 0.6s ease; margin-top: 0.75rem; }
+      .tdemo-outer.fading { opacity: 0; }
+      .tdemo-header-bar { background: #16130A; padding: 12px 20px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #2A1F00; }
+      .tdemo-dot { width: 12px; height: 12px; border-radius: 50%; }
+      .tdemo-dot.r { background: #ff5f57; } .tdemo-dot.y { background: #ffbd2e; } .tdemo-dot.g { background: #28c840; }
+      .tdemo-header-bar .tdemo-title { margin-left: 12px; font-size: 13px; color: #78716c; font-family: var(--mono); }
+      .tdemo-grid { display: grid; grid-template-columns: 1fr 360px; height: 580px; }
+      .tdemo-chat-panel { border-right: 1px solid #2A1F00; display: flex; flex-direction: column; background: #0c0b06; }
+      .tdemo-chat-header { padding: 10px 16px; font-size: 11px; font-weight: 600; color: #78716c; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid #2A1F00; }
+      .tdemo-chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; scrollbar-width: thin; scrollbar-color: #2A1F00 transparent; }
+      .tdemo-msg { display: flex; flex-direction: column; gap: 4px; opacity: 0; transform: translateY(6px); transition: opacity .35s ease, transform .35s ease; }
+      .tdemo-msg.visible { opacity: 1; transform: none; }
+      .tdemo-msg-role { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+      .tdemo-msg.user .tdemo-msg-role { color: #f59e0b; } .tdemo-msg.agent .tdemo-msg-role { color: #34d399; }
+      .tdemo-msg-bubble { background: #1a1506; border-radius: 8px; padding: 10px 12px; font-size: 13px; line-height: 1.55; color: #d6d3d1; }
+      .tdemo-msg.user .tdemo-msg-bubble { background: #1c1408; border: 1px solid #2A1F00; }
+      .tdemo-sql-block { background: #0a0900; border: 1px solid #2A1F00; border-radius: 6px; padding: 8px 10px; font-family: var(--mono); font-size: 11.5px; line-height: 1.7; margin-top: 8px; color: #fbbf24; }
+      .tdemo-sql-block .kw { color: #f472b6; font-weight: 600; }
+      .tdemo-sql-block .cm { color: #57534e; font-style: italic; }
+      .tdemo-sql-exec { font-size: 10px; color: #44403c; margin-top: 6px; }
+      .tdemo-typing { display: flex; gap: 4px; align-items: center; padding: 4px 0; }
+      .tdemo-typing span { width: 6px; height: 6px; background: #f59e0b; border-radius: 50%; animation: tdemobounce 1.2s infinite; }
+      .tdemo-typing span:nth-child(2) { animation-delay: .2s; } .tdemo-typing span:nth-child(3) { animation-delay: .4s; }
+      @keyframes tdemobounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+      .tdemo-data-panel { display: flex; flex-direction: column; background: #0c0b06; }
+      .tdemo-data-header { padding: 10px 16px; font-size: 11px; font-weight: 600; color: #78716c; text-transform: uppercase; letter-spacing: .08em; border-bottom: 1px solid #2A1F00; }
+      .tdemo-data-tabs { display: flex; border-bottom: 1px solid #2A1F00; }
+      .tdemo-data-tab { flex: 1; text-align: center; padding: 8px 4px; font-size: 11px; color: #44403c; cursor: pointer; transition: color .2s, border-bottom .2s; border-bottom: 2px solid transparent; }
+      .tdemo-data-tab.active { color: #f59e0b; border-bottom-color: #f59e0b; }
+      .tdemo-data-content { flex: 1; overflow-y: auto; padding: 12px; scrollbar-width: thin; scrollbar-color: #2A1F00 transparent; }
+      .tdemo-territory-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+      .tdemo-territory-table th { font-size: 10px; color: #78716c; text-transform: uppercase; letter-spacing: .06em; padding: 6px 4px; border-bottom: 1px solid #2A1F00; text-align: left; }
+      .tdemo-territory-table td { padding: 7px 4px; border-bottom: 1px solid #1a1506; color: #d6d3d1; opacity: 0; transition: opacity .3s ease; }
+      .tdemo-territory-table tr.visible td { opacity: 1; }
+      .tdemo-score-bar { display: inline-block; height: 6px; border-radius: 3px; background: linear-gradient(90deg,#f59e0b,#fbbf24); vertical-align: middle; margin-left: 4px; }
+      .tdemo-badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+      .tdemo-badge.alta { background: #052e16; color: #34d399; }
+      .tdemo-badge.media { background: #1c1a05; color: #fbbf24; }
+      .tdemo-badge.baja { background: #2d1a0e; color: #fb923c; }
+      .tdemo-chart-title { font-size: 11px; color: #78716c; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+      .tdemo-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+      .tdemo-bar-label { font-size: 10px; color: #a8a29e; width: 80px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .tdemo-bar-wrap { flex: 1; height: 14px; background: #1a1506; border-radius: 3px; overflow: hidden; }
+      .tdemo-bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 0.7s ease; }
+      .tdemo-bar-fill.demand { background: linear-gradient(90deg,#f59e0b,#fcd34d); }
+      .tdemo-bar-fill.comp { background: linear-gradient(90deg,#ef4444,#f97316); }
+      .tdemo-bar-val { font-size: 10px; color: #78716c; width: 28px; text-align: right; }
+      .tdemo-summary-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .tdemo-s-card { background: #1a1506; border: 1px solid #2A1F00; border-radius: 8px; padding: 12px; opacity: 0; transition: opacity .4s ease; }
+      .tdemo-s-card.visible { opacity: 1; }
+      .tdemo-s-label { font-size: 9px; color: #78716c; text-transform: uppercase; letter-spacing: .08em; }
+      .tdemo-s-value { font-size: 22px; font-weight: 800; color: #f59e0b; margin: 4px 0 2px; }
+      .tdemo-s-sub { font-size: 9.5px; color: #57534e; }
+      @media(max-width:768px){
+        .tdemo-grid { grid-template-columns: 1fr; height: auto; }
+        .tdemo-chat-panel { height: 400px; border-right: none; border-bottom: 1px solid #2A1F00; }
+        .tdemo-data-panel { height: 340px; }
+      }
+    </style>
+
+    <div class="tdemo-outer" id="tDemoOuter">
+      <div class="tdemo-header-bar">
+        <div class="tdemo-dot r"></div><div class="tdemo-dot y"></div><div class="tdemo-dot g"></div>
+        <span class="tdemo-title">EurekaMS / Territory Ops &mdash; Sesion activa</span>
+      </div>
+      <div class="tdemo-grid">
+        <div class="tdemo-chat-panel">
+          <div class="tdemo-chat-header">Conversacion</div>
+          <div class="tdemo-chat-messages" id="tDemoChatMessages"></div>
+        </div>
+        <div class="tdemo-data-panel">
+          <div class="tdemo-data-header">Datos en tiempo real</div>
+          <div class="tdemo-data-tabs">
+            <div class="tdemo-data-tab active" id="tTab0" onclick="tSetTab(0)">Zonas</div>
+            <div class="tdemo-data-tab" id="tTab1" onclick="tSetTab(1)">Demanda</div>
+            <div class="tdemo-data-tab" id="tTab2" onclick="tSetTab(2)">Resumen</div>
+          </div>
+          <div class="tdemo-data-content" id="tDemoDataContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+<script>
+(function(){
+'use strict';
+var zonas=[
+  {zona:'Polanco',alcaldia:'Miguel Hidalgo',competidores:14,demanda:92,oportunidad:'alta'},
+  {zona:'Narvarte',alcaldia:'Benito Juarez',competidores:8,demanda:88,oportunidad:'alta'},
+  {zona:'Santa Fe',alcaldia:'Alvaro Obregon',competidores:19,demanda:71,oportunidad:'media'},
+  {zona:'Del Valle',alcaldia:'Benito Juarez',competidores:6,demanda:83,oportunidad:'alta'},
+  {zona:'Lindavista',alcaldia:'G.A. Madero',competidores:4,demanda:79,oportunidad:'alta'},
+  {zona:'Pedregal',alcaldia:'Alvaro Obregon',competidores:11,demanda:64,oportunidad:'media'},
+  {zona:'Tlalpan Centro',alcaldia:'Tlalpan',competidores:3,demanda:74,oportunidad:'alta'},
+  {zona:'Satelite',alcaldia:'Naucalpan',competidores:22,demanda:58,oportunidad:'baja'},
+  {zona:'Coyoacan',alcaldia:'Coyoacan',competidores:7,demanda:81,oportunidad:'alta'},
+  {zona:'Iztapalapa Sur',alcaldia:'Iztapalapa',competidores:5,demanda:86,oportunidad:'alta'}
+];
+var chatScript=[
+  {role:'user',text:'Dame un ranking de zonas en CDMX por oportunidad de expansion — necesito demanda estimada, competidores activos en el giro y nivel de saturacion.'},
+  {role:'agent',typing:true},
+  {role:'agent',sql:'<span class="kw">SELECT</span>\n  z.zona, z.alcaldia,\n  <span class="kw">COUNT</span>(e.id) <span class="kw">AS</span> competidores,\n  z.score_demanda <span class="kw">AS</span> demanda\n<span class="kw">FROM</span> establecimientos e\n<span class="kw">JOIN</span> zonas_cdmx z <span class="kw">ON</span> ST_Within(e.geom, z.geom)\n<span class="kw">WHERE</span> e.clase_actividad_id = <span style="color:#86efac">\'432110\'</span> <span class="cm">-- giro objetivo</span>\n  <span class="kw">AND</span> e.entidad = <span style="color:#86efac">\'09\'</span>\n<span class="kw">GROUP BY</span> z.zona\n<span class="kw">ORDER BY</span> (z.score_demanda - <span class="kw">COUNT</span>(e.id)*3) <span class="kw">DESC</span>\n<span class="kw">LIMIT</span> 10;',exec:'Ejecutado en 0ms &middot; 10 filas &middot; DENUE 6.1M registros'},
+  {role:'agent',text:'Aqui esta el ranking de zonas con mayor potencial.<br><br><b>Hallazgos clave:</b><br>&bull; <b>Narvarte</b> y <b>Del Valle</b> tienen demanda alta (88 y 83) con competencia baja &mdash; las mejores entradas.<br>&bull; <b>Satelite</b> tiene 22 competidores activos, demanda baja &mdash; riesgo alto.<br>&bull; <b>Lindavista</b> es la sorpresa: solo 4 competidores, demanda solida (79).'},
+  {role:'user',text:'Graficame demanda vs saturacion para las top 8 zonas.'},
+  {role:'agent',typing:true},
+  {role:'agent',text:'Generando grafica comparativa demanda vs competidores...'},
+  {role:'agent',chart:true},
+  {role:'user',text:'Dame las 3 zonas prioritarias para abrir con justificacion.'},
+  {role:'agent',typing:true},
+  {role:'agent',text:'Cruzando demanda, competencia y densidad de giro para el top 3 optimo...'},
+  {role:'agent',text:'<b>Las 3 zonas recomendadas:</b><br><br><b>1. Narvarte</b> &mdash; Demanda 88/100, solo 8 competidores. Perfil C+/B. Acceso Metro L3 garantiza trafico constante.<br><br><b>2. Del Valle</b> &mdash; Demanda 83/100, 6 competidores. Alta densidad residencial, bajo ruido de competencia. ROI proyectado mas alto.<br><br><b>3. Lindavista</b> &mdash; Demanda 79/100, solo 4 competidores. Zona en crecimiento, ventana de entrada antes de la saturacion.'}
+];
+var tActiveTab=0;
+var tCurrentStep=0;
+var tDelays=[400,900,1200,500,400,900,600,500,400,900,600,500];
+
+function tSetTab(i){
+  tActiveTab=i;
+  ['tTab0','tTab1','tTab2'].forEach(function(id,j){var el=document.getElementById(id);if(el)el.classList.toggle('active',j===i);});
+  tRefreshPanel();
+}
+window.tSetTab=tSetTab;
+
+function tRefreshPanel(){
+  if(tActiveTab===0)tRenderZonas();
+  else if(tActiveTab===1)tRenderChart();
+  else tRenderSummary();
+}
+
+function tRenderZonas(){
+  var rows=zonas.map(function(z,i){
+    return '<tr id="trow-'+i+'"><td>'+z.zona+'</td><td style="font-size:10px;color:#78716c">'+z.alcaldia+'</td>'
+      +'<td style="text-align:center">'+z.competidores+'</td>'
+      +'<td>'+z.demanda+'<div class="tdemo-score-bar" style="width:'+Math.round(z.demanda*0.55)+'px"></div></td>'
+      +'<td><span class="tdemo-badge '+z.oportunidad+'">'+z.oportunidad.charAt(0).toUpperCase()+z.oportunidad.slice(1)+'</span></td></tr>';
+  }).join('');
+  document.getElementById('tDemoDataContent').innerHTML=
+    '<table class="tdemo-territory-table"><thead><tr><th>Zona</th><th>Alcaldia</th><th>Comp.</th><th>Demanda</th><th>Oportunidad</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  zonas.forEach(function(_,i){setTimeout(function(){var r=document.getElementById('trow-'+i);if(r)r.classList.add('visible');},i*80);});
+}
+
+function tRenderChart(){
+  var top8=zonas.slice(0,8);
+  var maxD=Math.max.apply(null,top8.map(function(z){return z.demanda;}));
+  var maxC=Math.max.apply(null,top8.map(function(z){return z.competidores;}));
+  var rows=top8.map(function(z){
+    return '<div class="tdemo-bar-row">'
+      +'<div class="tdemo-bar-label">'+z.zona+'</div>'
+      +'<div style="flex:1;display:flex;flex-direction:column;gap:3px">'
+      +'<div class="tdemo-bar-wrap"><div class="tdemo-bar-fill demand" style="width:0" data-w="'+Math.round(z.demanda/maxD*100)+'%"></div></div>'
+      +'<div class="tdemo-bar-wrap"><div class="tdemo-bar-fill comp" style="width:0" data-w="'+Math.round(z.competidores/maxC*100)+'%"></div></div>'
+      +'</div>'
+      +'<div class="tdemo-bar-val">'+z.demanda+'</div>'
+      +'</div>';
+  }).join('');
+  document.getElementById('tDemoDataContent').innerHTML=
+    '<div class="tdemo-chart-title">Demanda vs Competidores &middot; Top 8 Zonas</div>'
+    +'<div style="display:flex;gap:12px;margin-bottom:12px;font-size:10px">'
+    +'<span><span style="display:inline-block;width:12px;height:6px;background:#f59e0b;border-radius:2px;vertical-align:middle;margin-right:3px"></span>Demanda</span>'
+    +'<span><span style="display:inline-block;width:12px;height:6px;background:#ef4444;border-radius:2px;vertical-align:middle;margin-right:3px"></span>Competidores</span>'
+    +'</div>'+rows;
+  setTimeout(function(){
+    var fills=document.querySelectorAll('.tdemo-bar-fill');
+    fills.forEach(function(el){el.style.width=el.getAttribute('data-w');});
+  },80);
+}
+
+function tRenderSummary(){
+  document.getElementById('tDemoDataContent').innerHTML=
+    '<div class="tdemo-chart-title">Analisis de expansion &middot; CDMX</div>'
+    +'<div class="tdemo-summary-cards">'
+    +'<div class="tdemo-s-card" id="tsc0"><div class="tdemo-s-label">Zonas analizadas</div><div class="tdemo-s-value">10</div><div class="tdemo-s-sub">CDMX y zona metro</div></div>'
+    +'<div class="tdemo-s-card" id="tsc1"><div class="tdemo-s-label">Alta oportunidad</div><div class="tdemo-s-value">6</div><div class="tdemo-s-sub">demanda &gt;70, comp &lt;10</div></div>'
+    +'<div class="tdemo-s-card" id="tsc2"><div class="tdemo-s-label">Registros DENUE</div><div class="tdemo-s-value">6.1M</div><div class="tdemo-s-sub">establecimientos cruzados</div></div>'
+    +'<div class="tdemo-s-card" id="tsc3"><div class="tdemo-s-label">Mejor zona</div><div class="tdemo-s-value" style="font-size:16px">Narvarte</div><div class="tdemo-s-sub">demanda 88 &middot; 8 competidores</div></div>'
+    +'</div>';
+  [0,1,2,3].forEach(function(i){setTimeout(function(){var c=document.getElementById('tsc'+i);if(c)c.classList.add('visible');},i*150);});
+}
+
+function tAddMsg(msg,cb){
+  var el=document.createElement('div');
+  el.className='tdemo-msg '+(msg.role||'agent');
+  var roleLabel=msg.role==='user'?'Usuario':'Agente';
+  if(msg.typing){
+    el.innerHTML='<div class="tdemo-msg-role">'+roleLabel+'</div>'
+      +'<div class="tdemo-msg-bubble"><div class="tdemo-typing"><span></span><span></span><span></span></div></div>';
+    var msgs=document.getElementById('tDemoChatMessages');
+    msgs.appendChild(el);
+    msgs.scrollTop=msgs.scrollHeight;
+    setTimeout(function(){el.classList.add('visible');},50);
+    setTimeout(function(){if(msgs.contains(el))msgs.removeChild(el);if(cb)cb();},1400);
+    return;
+  }
+  var inner='';
+  if(msg.sql){
+    inner='<div class="tdemo-msg-role">'+roleLabel+'</div>'
+      +'<div class="tdemo-msg-bubble"><div class="tdemo-sql-block">'+msg.sql+'</div>'
+      +'<div class="tdemo-sql-exec">'+msg.exec+'</div></div>';
+  } else if(msg.chart){
+    inner='<div class="tdemo-msg-role">'+roleLabel+'</div>'
+      +'<div class="tdemo-msg-bubble" style="color:#78716c;font-size:12px">&#128202; Grafica generada &rarr; pestaña Demanda</div>';
+  } else {
+    inner='<div class="tdemo-msg-role">'+roleLabel+'</div>'
+      +'<div class="tdemo-msg-bubble">'+msg.text+'</div>';
+  }
+  el.innerHTML=inner;
+  var msgs=document.getElementById('tDemoChatMessages');
+  msgs.appendChild(el);
+  msgs.scrollTop=msgs.scrollHeight;
+  setTimeout(function(){el.classList.add('visible');},50);
+  if(msg.sql){tActiveTab=0;tSetTab(0);}
+  else if(msg.chart){tActiveTab=1;tSetTab(1);}
+  else if(msg.role==='agent'&&tCurrentStep>=chatScript.length-1){tActiveTab=2;tSetTab(2);}
+  if(cb)setTimeout(cb,600);
+}
+
+function tRun(idx){
+  if(idx>=chatScript.length){
+    setTimeout(function(){
+      var outer=document.getElementById('tDemoOuter');
+      if(!outer)return;
+      outer.classList.add('fading');
+      setTimeout(function(){
+        var m=document.getElementById('tDemoChatMessages');
+        if(m)m.innerHTML='';
+        tActiveTab=0;
+        ['tTab0','tTab1','tTab2'].forEach(function(id,j){var el=document.getElementById(id);if(el)el.classList.toggle('active',j===0);});
+        outer.classList.remove('fading');
+        setTimeout(function(){tRenderZonas();tRun(0);},400);
+      },600);
+    },4000);
+    return;
+  }
+  tCurrentStep=idx;
+  var delay=tDelays[idx]||600;
+  setTimeout(function(){tAddMsg(chatScript[idx],function(){tRun(idx+1);});},delay);
+}
+tRenderZonas();
+tRun(0);
+})();
+</script>
+
   </div>
 </section>
 
@@ -491,7 +1229,7 @@
     <div class="quien-grid">
       <div class="quien-card fade-in">
         <div class="quien-num">01</div>
-        <h4>Retail especializado 10+ tiendas</h4>
+        <h4>Retail especializado</h4>
         <p>Tienes operacion multitienda con inventarios distribuidos y quieres visibilidad central.</p>
       </div>
       <div class="quien-card fade-in fade-in-d1">
