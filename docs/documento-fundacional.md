@@ -1,4 +1,5 @@
 # EurekaMS — Mind Services
+
 **Documento Fundacional · Versión 1.1 · Junio 2026**
 
 ---
@@ -54,6 +55,7 @@ No construimos desde cero. Integramos y especializamos un stack de tecnología q
 Intelligence Ops conecta un agente AI directamente a tu warehouse (Postgres, Snowflake, BigQuery, SAP). El agente lee tu schema, entiende tu negocio, escribe el SQL, lo ejecuta, y te entrega la respuesta con el chart y la narrativa — en 60 segundos, por WhatsApp o en una interfaz web.
 
 **Preguntas que responde hoy:**
+
 - "¿Cuál es mi tienda con mayor riesgo de quiebre de stock este fin de semana?"
 - "¿Qué SKUs no rotan en el norte del país desde hace 30 días?"
 - "¿Por qué la tienda del Pedregal vende 40% más que su par en Satélite?"
@@ -64,7 +66,7 @@ Cada respuesta viene con el SQL visible y auditable. No es una caja negra — es
 
 Más allá de las preguntas: el sistema genera alertas proactivas. Si detecta una anomalía (quiebre inminente, underperformance sostenida, concentración de inventario en una región que no vende), te avisa antes de que el daño ya esté hecho.
 
-**Tecnología:** Wilab (agente MCP-nativo, whitelabel) + DENUE Analyzer + warehouse del cliente.
+**Tecnología:** intelligence-ops-mcp (agente MCP-nativo, self-hosted) + DENUE Analyzer + warehouse del cliente.
 
 ---
 
@@ -73,6 +75,7 @@ Más allá de las preguntas: el sistema genera alertas proactivas. Si detecta un
 Voice Solutions automatiza las conversaciones de volumen — sin bajar la calidad, sin sonar a robot — para que tu equipo humano concentre su energía en los cierres que realmente necesitan atención personal.
 
 **Lo que puede hacer:**
+
 - **Inbound:** atender llamadas de clientes a cualquier hora (disponibilidad, precios, agendamiento, soporte básico)
 - **Outbound:** campañas de reactivación, recordatorios de cita, seguimiento post-compra
 - **Prospección:** llamadas en frío a volumen que ningún equipo humano puede igualar
@@ -86,6 +89,7 @@ El motor es PipeSong — Voice AI self-hosted con latencia menor a 1.1 segundos,
 Territory Ops conecta 6.1 millones de establecimientos económicos (DENUE/INEGI) a tu pregunta específica.
 
 **Preguntas que responde:**
+
 - "¿Dónde debería abrir mi próxima tienda en CDMX?"
 - "¿Qué tan saturado está el mercado de calzado deportivo en Monterrey norte?"
 - "¿Cuál es el perfil socioeconómico del radio de 2km alrededor de este local?"
@@ -99,13 +103,13 @@ No elimina el juicio del director. Lo amplifica con evidencia.
 
 ## EL STACK
 
-| Componente | Rol | Pilar |
-|---|---|---|
-| **Wilab** | Agente analítico MCP-nativo, whitelabel. SQL auditable. Datos en tu infra. | Intelligence Ops |
-| **PipeSong** | Motor de voz AI self-hosted. Latencia <1.1s. <$0.03/min. Español nativo. | Voice Solutions |
-| **DENUE Analyzer** | 6.1M establecimientos INEGI. Por zona, categoría, densidad competitiva. | Intelligence Ops + Territory Ops |
-| **Mexico Uncharted** | Datos territoriales: demográficos, socioeconómicos, geoespaciales por AGEB. | Territory Ops |
-| **Jarvis** | Inteligencia interna autónoma: prospecta, enriquece, detecta oportunidades. | Prospección |
+| Componente               | Rol                                                                         | Pilar                            |
+| ------------------------ | --------------------------------------------------------------------------- | -------------------------------- |
+| **intelligence-ops-mcp** | Agente analítico MCP-nativo, self-hosted. SQL auditable. Datos en tu infra. | Intelligence Ops                 |
+| **PipeSong**             | Motor de voz AI self-hosted. Latencia <1.1s. <$0.03/min. Español nativo.    | Voice Solutions                  |
+| **DENUE Analyzer**       | 6.1M establecimientos INEGI. Por zona, categoría, densidad competitiva.     | Intelligence Ops + Territory Ops |
+| **Mexico Uncharted**     | Datos territoriales: demográficos, socioeconómicos, geoespaciales por AGEB. | Territory Ops                    |
+| **Jarvis**               | Inteligencia interna autónoma: prospecta, enriquece, detecta oportunidades. | Prospección                      |
 
 ---
 
@@ -131,12 +135,14 @@ Eso es lo que construimos.
 ## PARA QUIÉN ES ESTO
 
 **Perfil ideal:**
+
 - Retail, servicios o food service · 10 a 500 tiendas en México
 - Tiene datos (ERP, CRM, SQL, Snowflake) pero no los convierte en decisiones
 - Tiene volumen de contacto que su equipo no puede procesar completamente
 - Está creciendo o quiere crecer con evidencia, no con intuición
 
 **Lo que NO somos:**
+
 - No somos una consultora que entrega un reporte y desaparece
 - No somos un software que el cliente implementa solo
 - No somos un call center externo
@@ -145,7 +151,7 @@ Somos la capa de inteligencia que vive dentro de tu negocio.
 
 ---
 
-*EurekaMS · Mind Services · Una empresa EurekaMD-net · Junio 2026*
+_EurekaMS · Mind Services · Una empresa EurekaMD-net · Junio 2026_
 
 ---
 
@@ -154,22 +160,27 @@ Somos la capa de inteligencia que vive dentro de tu negocio.
 ### v1.2 — 2026-06-26
 
 **Demos interactivos por pilar:**
+
 - Cada pilar (Intelligence Ops, Voice Solutions, Territory Ops) tiene un demo animado inline.
 - Los demos se integraron directamente bajo su pilar card (arquitectura refactorizada desde secciones separadas).
 - Cadencia compartida: chat izquierda + dashboard derecha, loop automático, activación de pestaña por respuesta del agente.
 
 **Voice Solutions demo (nuevo):**
+
 - Paleta verde/teal, 3 turnos de conversación.
 - Dashboard de llamadas: distribución por resultado, KPIs, tabla detallada.
 - Datos simulados: 12 leads, 62% contacto, 38% conversión, 2:51 prom.
 
 **Ajustes de copy:**
+
 - Pilar Territory Ops: removido "10+ tiendas" del tag secundario — queda solo "Retail especializado en Fit Comercial".
 
 **Spacing:**
+
 - Reducción global de padding de secciones y márgenes entre módulos para experiencia menos cluttered.
 
 **Learnings técnicos:**
+
 - Los demos como IIFE independientes son portables y no interfieren entre sí.
 - La activación de pestaña al responder el agente crea la ilusión de causa-efecto natural.
 - Paletas distintas por pilar (azul / teal / ámbar) permiten diferenciar módulos sin necesidad de separadores visuales.
